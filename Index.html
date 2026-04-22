@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bingo Game</title>
+</head>
+<body style="text-align:center; font-family:sans-serif;">
+  <h1>🎮 Bingo Game</h1>
+
+  <button onclick="play()">Play</button>
+
+  <script>
+    function play() {
+      let win = Math.random() > 0.5;
+
+      let data = {
+        result: win ? "win" : "lose",
+        amount: win ? 50 : 0
+      };
+
+      Telegram.WebApp.sendData(JSON.stringify(data));
+    }
+  </script>
+</body>
+</html>
